@@ -11,17 +11,26 @@
   top: 0;
   z-index: 2;
 
-  #nav-hamburger {
+  .nav-button {
     width: 30px;
     height: 30px;
     position: absolute;
     right: 10px;
     top: 10px;
+    background: none;
+    border: none;
     display: none;
-    cursor: pointer;
+
+    #nav-button-img {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
 
     @media screen and (max-width: 768px) {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -34,17 +43,13 @@
     font-weight: 700;
     text-decoration: none;
   }
-  
-  .nav-list-wrapper {
+
+  .nav-list {
     display: flex;
     align-items: center;
 
     li {
       list-style: none;
-
-      @media screen and (max-width: 768px) {
-        display: none;
-      }
 
       a {
         display: flex;
@@ -56,11 +61,58 @@
         color: base.$font-color;
         font-weight: 400;
         font-size: 1rem;
+
+        @media screen and (max-width: 768px) {
+          width: 100%;
+        }
       }
       
       a:hover {
         background-color: base.$tertiary-color;
       }
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        border-top: 1px base.$secondary-color solid;
+      }
     }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      background-color: base.$tertiary-color;
+      width: 100%;
+      position: absolute;
+      top: 50px;
+      animation-name: slideOut;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .nav-list.expanded {
+    @media screen and (max-width: 768px) {
+      display: flex;
+      animation-name: slideIn;
+      animation-duration: 0.5s;
+    }
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
