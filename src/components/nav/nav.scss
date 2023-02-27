@@ -1,0 +1,66 @@
+@use '../../base';
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  background-color: base.$secondary-color;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+
+  #nav-hamburger {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: none;
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    color: base.$font-color;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  
+  .nav-list-wrapper {
+    display: flex;
+    align-items: center;
+
+    li {
+      list-style: none;
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 50px;
+        text-decoration: none;
+        color: base.$font-color;
+        font-weight: 400;
+        font-size: 1rem;
+      }
+      
+      a:hover {
+        background-color: base.$tertiary-color;
+      }
+    }
+  }
+}

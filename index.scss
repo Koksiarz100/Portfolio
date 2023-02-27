@@ -1,12 +1,9 @@
-$font-color: #f5f5f5;
-$primary-color: #18122B;
-$secondary-color: #18122B;
-$tertiary-color: #443C68;
-$quaternary-color: #635985;
+@use './src/base.scss';
 
 body {
-  background-color: $primary-color;
+  background-color: base.$primary-color;
   padding: 0;
   margin: 0;
-  color: $font-color;
+  color: base.$font-color;
+  font-family: base.$font-stack;
 }
