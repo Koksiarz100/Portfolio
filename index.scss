@@ -1,0 +1,12 @@
+$font-color: #f5f5f5;
+$primary-color: #18122B;
+$secondary-color: #18122B;
+$tertiary-color: #443C68;
+$quaternary-color: #635985;
+
+body {
+  background-color: $primary-color;
+  padding: 0;
+  margin: 0;
+  color: $font-color;
+}
