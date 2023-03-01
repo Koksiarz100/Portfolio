@@ -51,7 +51,7 @@ function Nav() {
 
   return (
     <div className='nav-wrapper'>
-      <div className='nav-logo'>
+      <div className='nav-logo'> 
         Portfolio
       </div>
       <>

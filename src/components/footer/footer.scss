@@ -1,0 +1,7 @@
+@use '../../base';
+
+.footer-wrapper {
+  background-color: base.$primary-color;
+  text-align: center;
+  background-color: base.$secondary-color;
+}
