@@ -1,5 +1,9 @@
 @use '../../base';
 
+#projects {
+  scroll-margin-top: -20px;
+}
+
 .projects-wrapper {
   display: flex;
   flex-direction: column;
@@ -7,12 +11,159 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
+
+  .projects-title {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 1800px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    height: 1800px;
+  }
 }
 
-.projects-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-  color: base.$font-color;
+.projects-containers-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
+
+  .projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 400px;
+    padding: 50px 30px 0 30px;
+    margin: 0 20px 55px 20px;
+    background-color: base.$quaternary-color;
+    border-radius: 10px;
+
+    @media screen and (max-width: 768px) {
+      width: 280px;
+      margin-bottom: 70px;
+    }
+
+    .project-main {
+      width: 300px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .project-image {
+      width: 300px;
+      height: 200px;
+      border-radius: 10px;
+    }
+
+    .project-image:hover {
+
+      width: 320px;
+      height: 220px;
+      border-radius: 10px;
+      animation-name: zoomIn;
+      animation-duration: 0.1s;
+      cursor: pointer;
+
+      @media screen and (max-width: 768px) {
+        width: 300px;
+        height: 200px;
+        animation-name: none;
+      }
+    }
+
+    .project-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+
+      .project-card-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding: 0.3rem;
+      }
+
+      span {
+        font-size: 1rem;
+        font-weight: 400;
+        text-align: center;
+      }
+    }
+
+    .project-footer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 360px;
+      padding: 20px 0 20px 0;
+      background-color: #f5f5f5;
+      color: black;
+      font-size: 1.2rem;
+
+      @media screen and (max-width: 768px) {
+        width: 340px;
+      }
+
+      .project-link{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: black;
+
+        .git-icon {
+          width: 30px;
+          height: 30px;
+          margin: 0 10px;
+        }
+      }
+    }
+
+    .border-bottom {
+      position: relative;
+      top: -5px;
+      width: 360px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      padding-top: 10px;
+
+      @media screen and (max-width: 768px) {
+        width: 340px;
+      }
+    }
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    width: 300px;
+    height: 200px;
+  }
+  100% {
+    width: 320px;
+    height: 220px;
+  }
 }

@@ -4,7 +4,21 @@ import './footer.scss'
 function Footer() {
   return (
     <div className='footer-wrapper'>
-      Footer
+      <div className='footer-section'>
+        <div className='footer-section-box'>
+          Contact
+        </div>
+      </div>
+      <div className='footer-section'>
+        <div className='footer-section-box'>
+          Contact
+        </div>
+      </div>
+      <div className='footer-section'>
+        <div className='footer-section-box'>
+          Contact
+        </div>
+      </div>
     </div>
   )
 }
