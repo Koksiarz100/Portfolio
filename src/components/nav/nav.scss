@@ -21,10 +21,23 @@
     border: none;
     display: none;
 
-    #nav-button-img {
-      width: 30px;
-      height: 30px;
+    .nav-button-img {
+      width: 20px;
+      height: 20px;
       cursor: pointer;
+      animation-name: rotationBack;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+    }
+
+    .nav-button-img.rotated {
+      animation-name: rotation;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+    }
+
+    .nav-button-img.normal {
+      animation-name: none;
     }
 
     @media screen and (max-width: 768px) {
@@ -90,13 +103,18 @@
   }
 
   .nav-list.expanded {
-    @media screen and (max-width: 768px) {
-      display: flex;
-      animation-name: slideIn;
-      animation-duration: 0.5s;
-    }
+    display: flex;
+    animation-name: slideIn;
+    animation-duration: 0.5s;
+  }
+
+  .nav-list.normal {
+    display: none;
+    animation-name: none;
   }
 }
+
+// Animations for nav
 
 @keyframes slideIn {
   0% {
@@ -114,5 +132,23 @@
   }
   100% {
     transform: translateX(100%);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes rotationBack {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
