@@ -108,9 +108,11 @@
     animation-duration: 0.5s;
   }
 
-  .nav-list.normal {
-    display: none;
-    animation-name: none;
+  @media screen and (max-width: 768px) {
+    .nav-list.normal {
+      display: none;
+      animation-name: none;
+    }
   }
 }
 
