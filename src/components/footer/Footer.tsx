@@ -11,12 +11,12 @@ function Footer() {
       </div>
       <div className='footer-section'>
         <div className='footer-section-box'>
-          Contact
+          Socials
         </div>
       </div>
       <div className='footer-section'>
         <div className='footer-section-box'>
-          Contact
+          Menu
         </div>
       </div>
     </div>
