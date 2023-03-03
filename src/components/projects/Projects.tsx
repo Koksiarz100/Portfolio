@@ -26,6 +26,7 @@ function ProjectCard(card : number) {
 
   let Card : any;
 
+  
   if(card === 1) {
     Card = Card1
   }
@@ -44,7 +45,7 @@ function ProjectCard(card : number) {
         </div>
         <div className='project-section'>
           <span className='project-card-title'>{Card.title}</span>
-          <span>{Card1.text}</span>
+          <span>{Card.text}</span>
         </div>
         <div className='project-footer'>
           <a className='project-link' href={Card.link}>
@@ -58,40 +59,45 @@ function ProjectCard(card : number) {
   );
 }
 
-function ProjectsCarusel(start : number) {
-    
-  let slide : number = start;
-  let slide1 : number = 1;
-  let slide2 : number = 2;
-  let slide3 : number = 3;
+const slides = [1, 2, 3];
 
-  if(slide === 2){
-    slide1 = 2;
-    slide2 = 3;
-    slide3 = 1;
+function ProjectsCarusel(start : number) {
+  let slide1 : number;
+  let slide2 : number;
+  let slide3 : number;
+
+  if(start === 1) {
+    return (
+      <>
+        {ProjectCard(1)}
+        {ProjectCard(2)}
+        {ProjectCard(3)}
+      </>
+    )
   }
-  else if(slide === 3){
-    slide1 = 3;
-    slide2 = 1;
-    slide3 = 2;
+  else {
+    slide1 = slides[0];
+    slide2 = slides[1];
+    slide3 = slides[2];
+
+    let goingUp = slides[0];
+    slides.push(goingUp);
+    slides.shift();
+    console.log(slides);
+    
+    return (
+      <>
+        {ProjectCard(slide1)}
+        {ProjectCard(slide2)}
+        {ProjectCard(slide3)}
+      </>
+    )
   }
-  
-  return (
-    <>
-      {ProjectCard(slide1)}
-      {ProjectCard(slide2)}
-      {ProjectCard(slide3)}
-    </>
-  )
 }
 
 
 function Projects() {
   const [start, setStart] = React.useState(1)
-
-  if(start===4){
-    setStart(1)
-  }
 
   return (
     <div className='projects-wrapper' id='projects'>
