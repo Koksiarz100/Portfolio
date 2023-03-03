@@ -1,7 +1,7 @@
 import React from 'react'
 import './projects.scss'
 import placeholder from '../../assets/placeholder.png'
-import git from '../../assets/git.png'
+import github from '../../assets/github.png'
 import next from '../../assets/next.png'
 import back from '../../assets/back.png'
 
@@ -52,7 +52,7 @@ function ProjectCard(card : number) {
         <div className='project-footer'>
           <a className='project-link' href={Card.link}>
             GitHub
-            <img src={git} alt='git' className='git-icon' />
+            <img src={github} alt='git' className='git-icon' />
           </a>
         </div>
         <div className='border-bottom'></div>
@@ -62,13 +62,17 @@ function ProjectCard(card : number) {
 }
 
 const slides = [2, 3, 1];
+let slideNumber = 1;
+let started = false;
 
 function ProjectsCarusel(start : number) {
+
   let slide1 : number;
   let slide2 : number;
   let slide3 : number;
 
-  if(start === 1) {
+  if(started === false) {
+    started = true;
     return (
       <>
         {ProjectCard(1)}
@@ -78,22 +82,43 @@ function ProjectsCarusel(start : number) {
     )
   }
   else {
-    slide1 = slides[0];
-    slide2 = slides[1];
-    slide3 = slides[2];
+    if(start >= slideNumber) {
+      slideNumber = start;
+      slide1 = slides[0];
+      slide2 = slides[1];
+      slide3 = slides[2];
 
-    let goingUp = slides[0];
-    slides.push(goingUp);
-    slides.shift();
-    console.log(slides);
-    
-    return (
-      <>
-        {ProjectCard(slide1)}
-        {ProjectCard(slide2)}
-        {ProjectCard(slide3)}
-      </>
-    )
+      let goingUp = slides[0];
+      slides.push(goingUp);
+      slides.shift();
+      console.log(slides);
+      
+      return (
+        <>
+          {ProjectCard(slide1)}
+          {ProjectCard(slide2)}
+          {ProjectCard(slide3)}
+        </>
+      )
+    }
+    else if(start < slideNumber) {
+      slideNumber = start;
+      slide1 = slides[0];
+      slide2 = slides[1];
+      slide3 = slides[2];
+
+      slides.unshift(slides[slides.length-1]);
+      slides.pop();
+      console.log(slides);
+      
+      return (
+        <>
+          {ProjectCard(slide1)}
+          {ProjectCard(slide2)}
+          {ProjectCard(slide3)}
+        </>
+      )
+    }
   }
 }
 
@@ -105,7 +130,7 @@ function Projects() {
     <div className='projects-wrapper' id='projects'>
       <span className='projects-title'>Projects</span>
       <div className='projects-containers-wrapper'>
-        <button className='projects-button' onClick={() => setStart(start+1)}>
+        <button className='projects-button' onClick={() => setStart(start-1)}>
           <img src={back} alt='next' className='next-icon' />
         </button>
         {ProjectsCarusel(start)}
