@@ -2,6 +2,8 @@ import React from 'react'
 import './projects.scss'
 import placeholder from '../../assets/placeholder.png'
 import git from '../../assets/git.png'
+import next from '../../assets/next.png'
+import back from '../../assets/back.png'
 
 
 const Card1 = {
@@ -59,7 +61,7 @@ function ProjectCard(card : number) {
   );
 }
 
-const slides = [1, 2, 3];
+const slides = [2, 3, 1];
 
 function ProjectsCarusel(start : number) {
   let slide1 : number;
@@ -103,9 +105,13 @@ function Projects() {
     <div className='projects-wrapper' id='projects'>
       <span className='projects-title'>Projects</span>
       <div className='projects-containers-wrapper'>
-        <button onClick={() => setStart(start+1)}>Next</button>
+        <button className='projects-button' onClick={() => setStart(start+1)}>
+          <img src={back} alt='next' className='next-icon' />
+        </button>
         {ProjectsCarusel(start)}
-        <button>Previous</button>
+        <button className='projects-button' onClick={() => setStart(start+1)}>
+          <img src={next} alt='next' className='next-icon' />
+        </button>
       </div>
     </div>
   )
