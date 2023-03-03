@@ -1,0 +1,156 @@
+@use '../../base';
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  background-color: base.$secondary-color;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+
+  .nav-button {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    display: none;
+
+    .nav-button-img {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      animation-name: rotationBack;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+    }
+
+    .nav-button-img.rotated {
+      animation-name: rotation;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+    }
+
+    .nav-button-img.normal {
+      animation-name: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    color: base.$font-color;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+
+    li {
+      list-style: none;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 50px;
+        text-decoration: none;
+        color: base.$font-color;
+        font-weight: 400;
+        font-size: 1rem;
+
+        @media screen and (max-width: 768px) {
+          width: 100%;
+        }
+      }
+      
+      a:hover {
+        background-color: base.$tertiary-color;
+      }
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        border-top: 1px base.$secondary-color solid;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      background-color: base.$tertiary-color;
+      width: 100%;
+      position: absolute;
+      top: 50px;
+      animation-name: slideOut;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .nav-list.expanded {
+    display: flex;
+    animation-name: slideIn;
+    animation-duration: 0.5s;
+  }
+
+  @media screen and (max-width: 768px) {
+    .nav-list.normal {
+      display: none;
+      animation-name: none;
+    }
+  }
+}
+
+// Animations for nav
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes rotationBack {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

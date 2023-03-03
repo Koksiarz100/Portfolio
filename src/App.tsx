@@ -9,7 +9,7 @@ import './App.scss'
 
 function App() {
   return (
-    <div className="App-wrapper">
+    <div className="app-wrapper">
       <Nav />
       <Home />
       <About />
