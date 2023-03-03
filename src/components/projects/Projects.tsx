@@ -38,21 +38,23 @@ function ProjectCard(card : number) {
   
   return (
     <div className='projects-container'>
-    <div className='project-main'>
-      <img src={placeholder} alt={Card.title} className='project-image' />
+      <div className='project-card-main'>
+        <div className='project-card-img'>
+          <img src={placeholder} alt={Card.title} className='project-image' />
+        </div>
+        <div className='project-section'>
+          <span className='project-card-title'>{Card.title}</span>
+          <span>{Card1.text}</span>
+        </div>
+        <div className='project-footer'>
+          <a className='project-link' href={Card.link}>
+            GitHub
+            <img src={git} alt='git' className='git-icon' />
+          </a>
+        </div>
+        <div className='border-bottom'></div>
+      </div>
     </div>
-    <div className='project-section'>
-      <span className='project-card-title'>{Card.title}</span>
-      <span>{Card1.text}</span>
-    </div>
-    <div className='project-footer'>
-      <a className='project-link' href={Card.link}>
-        GitHub
-        <img src={git} alt='git' className='git-icon' />
-      </a>
-    </div>
-    <div className='border-bottom'></div>
-  </div>
   );
 }
 
