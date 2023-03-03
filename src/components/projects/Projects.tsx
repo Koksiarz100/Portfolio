@@ -1,7 +1,9 @@
 import React from 'react'
 import './projects.scss'
 import placeholder from '../../assets/placeholder.png'
-import git from '../../assets/git.png'
+import github from '../../assets/github.png'
+import next from '../../assets/next.png'
+import back from '../../assets/back.png'
 
 
 const Card1 = {
@@ -26,6 +28,7 @@ function ProjectCard(card : number) {
 
   let Card : any;
 
+  
   if(card === 1) {
     Card = Card1
   }
@@ -44,12 +47,12 @@ function ProjectCard(card : number) {
         </div>
         <div className='project-section'>
           <span className='project-card-title'>{Card.title}</span>
-          <span>{Card1.text}</span>
+          <span>{Card.text}</span>
         </div>
         <div className='project-footer'>
           <a className='project-link' href={Card.link}>
             GitHub
-            <img src={git} alt='git' className='git-icon' />
+            <img src={github} alt='git' className='git-icon' />
           </a>
         </div>
         <div className='border-bottom'></div>
@@ -58,48 +61,82 @@ function ProjectCard(card : number) {
   );
 }
 
-function ProjectsCarusel(start : number) {
-    
-  let slide : number = start;
-  let slide1 : number = 1;
-  let slide2 : number = 2;
-  let slide3 : number = 3;
+const slides = [2, 3, 1];
+let slideNumber = 1;
+let started = false;
 
-  if(slide === 2){
-    slide1 = 2;
-    slide2 = 3;
-    slide3 = 1;
+function ProjectsCarusel(start : number) {
+
+  let slide1 : number;
+  let slide2 : number;
+  let slide3 : number;
+
+  if(started === false) {
+    started = true;
+    return (
+      <>
+        {ProjectCard(1)}
+        {ProjectCard(2)}
+        {ProjectCard(3)}
+      </>
+    )
   }
-  else if(slide === 3){
-    slide1 = 3;
-    slide2 = 1;
-    slide3 = 2;
+  else {
+    if(start >= slideNumber) {
+      slideNumber = start;
+      slide1 = slides[0];
+      slide2 = slides[1];
+      slide3 = slides[2];
+
+      let goingUp = slides[0];
+      slides.push(goingUp);
+      slides.shift();
+      console.log(slides);
+      
+      return (
+        <>
+          {ProjectCard(slide1)}
+          {ProjectCard(slide2)}
+          {ProjectCard(slide3)}
+        </>
+      )
+    }
+    else if(start < slideNumber) {
+      slideNumber = start;
+      slide1 = slides[0];
+      slide2 = slides[1];
+      slide3 = slides[2];
+
+      slides.unshift(slides[slides.length-1]);
+      slides.pop();
+      console.log(slides);
+      
+      return (
+        <>
+          {ProjectCard(slide1)}
+          {ProjectCard(slide2)}
+          {ProjectCard(slide3)}
+        </>
+      )
+    }
   }
-  
-  return (
-    <>
-      {ProjectCard(slide1)}
-      {ProjectCard(slide2)}
-      {ProjectCard(slide3)}
-    </>
-  )
 }
 
 
 function Projects() {
   const [start, setStart] = React.useState(1)
 
-  if(start===4){
-    setStart(1)
-  }
-
   return (
     <div className='projects-wrapper' id='projects'>
       <span className='projects-title'>Projects</span>
       <div className='projects-containers-wrapper'>
-        <button onClick={() => setStart(start+1)}>Next</button>
+        <button className='projects-button' onClick={() => setStart(start-1)}>
+          <img src={back} alt='next' className='next-icon' />
+        </button>
         {ProjectsCarusel(start)}
-        <button>Previous</button>
+        <button className='projects-button' onClick={() => setStart(start+1)}>
+          <img src={next} alt='next' className='next-icon' />
+        </button>
       </div>
     </div>
   )

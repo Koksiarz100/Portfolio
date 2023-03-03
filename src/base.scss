@@ -7,3 +7,9 @@ $primary-color: #18122B;
 $secondary-color: #393053;
 $tertiary-color: #443C68;
 $quaternary-color: #635985;
+
+// App
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+}
