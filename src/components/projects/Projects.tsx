@@ -1,10 +1,9 @@
 import React from 'react'
 import './projects.scss'
 import placeholder from '../../assets/placeholder.png'
-import github from '../../assets/github.png'
+import github from '../../assets/icons/github.png'
 import next from '../../assets/next.png'
 import back from '../../assets/back.png'
-
 
 const Card1 = {
   link: 'index.html',
