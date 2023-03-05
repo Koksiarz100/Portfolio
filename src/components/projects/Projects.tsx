@@ -81,8 +81,9 @@ function ProjectsCarusel(start : number) {
     )
   }
   else {
-    if(start >= slideNumber) {
+    if(start > slideNumber) {
       slideNumber = start;
+      console.log(slideNumber);
       slide1 = slides[0];
       slide2 = slides[1];
       slide3 = slides[2];
@@ -102,6 +103,7 @@ function ProjectsCarusel(start : number) {
     }
     else if(start < slideNumber) {
       slideNumber = start;
+      console.log(slideNumber);
       slide1 = slides[0];
       slide2 = slides[1];
       slide3 = slides[2];
@@ -121,6 +123,12 @@ function ProjectsCarusel(start : number) {
   }
 }
 
+
+/*
+  TODO:
+  - Karuzela na równej wartośći gubi się w pętli. (Trzeba naprawić!)
+  - Trzeba dodać animacje do karuzeli.
+*/
 
 function Projects() {
   const [start, setStart] = React.useState(1)

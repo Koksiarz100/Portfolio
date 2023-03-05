@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import 'animate.css';
 import './about.scss';
-import AnimatedBox from '../AnimatedBoxProps';
 
 function About(){
   return (
