@@ -124,10 +124,13 @@ function ProjectsCarusel(start : number) {
 }
 
 
-/*
-  TODO:
-  - Karuzela na równej wartośći gubi się w pętli. (Trzeba naprawić!)
-  - Trzeba dodać animacje do karuzeli.
+/** 
+  //TODO:
+  * ! Karuzela na równej wartośći gubi się w pętli (Trzeba naprawić!).
+  * ! Wszystko przepisać na class'y.
+  * ? Może zmienić objecty cart.
+  * * Trzeba dodać animacje do karuzeli.
+  * * Następne slide'y po danym czaśie.
 */
 
 function Projects() {
