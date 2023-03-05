@@ -2,6 +2,11 @@ import React, { useState } from 'react'
 import './nav.scss'
 import hamburger from '../../assets/nav/hamburger-light.png'
 
+/** 
+  * TODO:
+  * ! Dodać informacje gdzie znajduje się użytkownik na stronie (Może border u dołu danego <a>).
+  * * Przepisać na JS6.
+*/
 
 function Nav() {
   const [isNavExpanded, setIsNavExpanded] = useState(false)
