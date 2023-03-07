@@ -19,13 +19,13 @@ import php from '../../assets/icons/php.png'
  * ! - Dodać responsywność.
  * * - Pokazać jakoś jakie umiejętności posiadam.
  * ? - Może rowijane na hover?
+ * ! - Przepisać na componenty.
  */
 
 class Skills extends React.Component {
   render() {
       return(
         <div className='skills-wrapper' id='skills'>
-          
           <span className='skills-title'>My skills</span>
           <div className='skills-img-wrapper'>
             <div className='skills-card'>
