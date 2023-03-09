@@ -2,6 +2,11 @@ import React, { useState } from 'react'
 import './nav.scss'
 import hamburger from '../../assets/nav/hamburger-light.png'
 
+/** 
+  * TODO:
+  * ! Dodać informacje gdzie znajduje się użytkownik na stronie (Może border u dołu danego <a>).
+  * * Przepisać na JS6.
+*/
 
 function Nav() {
   const [isNavExpanded, setIsNavExpanded] = useState(false)
@@ -20,11 +25,11 @@ function Nav() {
           <div className={
             isNavExpanded ? "nav-list expanded" : "nav-list"
           }>
-          <li className='nav-item'><a href='#home'>Home</a></li>
-          <li><a href='#about'>About</a></li>
-          <li><a href='#skills'>Skills</a></li>
-          <li><a href='#projects'>Projects</a></li>
-        </div>
+            <li className='nav-item'><a href='#home'>Home</a></li>
+            <li><a href='#about'>About</a></li>
+            <li><a href='#skills'>Skills</a></li>
+            <li><a href='#projects'>Projects</a></li>
+          </div>
         </>
       )
     }

@@ -17,13 +17,22 @@
   color: base.$font-color;
 }
 
+.about-img {
+  width: 300px;
+  -webkit-filter: drop-shadow(2px 2px 0 white) 
+                    drop-shadow(-2px -2px 0 white);
+    filter:drop-shadow(2px 2px 0 white) 
+           drop-shadow(-2px -2px 0 white);
+}
+
 .about-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  width: 75%;
+  text-align: justify;
+  width: 30vw;
+  margin-top: 20px;
 
   .about-p {
     font-size: 1rem;

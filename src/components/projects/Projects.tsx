@@ -5,6 +5,15 @@ import github from '../../assets/icons/github.png'
 import next from '../../assets/next.png'
 import back from '../../assets/back.png'
 
+/** 
+  * TODO:
+  * ! Karuzela na równej wartośći gubi się w pętli (Trzeba naprawić!).
+  * ! Wszystko przepisać na class'y.
+  * ? Może zmienić objecty cart.
+  * * Trzeba dodać animacje do karuzeli.
+  * * Następne slide'y po danym czaśie.
+*/
+
 const Card1 = {
   link: 'index.html',
   title: 'Projekt 1',
@@ -81,8 +90,9 @@ function ProjectsCarusel(start : number) {
     )
   }
   else {
-    if(start >= slideNumber) {
+    if(start > slideNumber) {
       slideNumber = start;
+      console.log(slideNumber);
       slide1 = slides[0];
       slide2 = slides[1];
       slide3 = slides[2];
@@ -102,6 +112,7 @@ function ProjectsCarusel(start : number) {
     }
     else if(start < slideNumber) {
       slideNumber = start;
+      console.log(slideNumber);
       slide1 = slides[0];
       slide2 = slides[1];
       slide3 = slides[2];
@@ -120,7 +131,6 @@ function ProjectsCarusel(start : number) {
     }
   }
 }
-
 
 function Projects() {
   const [start, setStart] = React.useState(1)
