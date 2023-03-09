@@ -146,14 +146,6 @@
       }
       .skills-card-background:hover {
 
-        .skills-img-section {
-          position: fixed;
-          top: 32%;
-          transform: translateY(-10%);
-          animation-name: toTheTop;
-          animation-duration: 0.5s;
-        }
-
         .skills-img-titles {
           display: none;
         }
@@ -205,15 +197,6 @@
   margin: 0;
   padding: 0;
   color: base.$font-color;
-}
-
-@keyframes toTheTop {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-10%);
-  }
 }
 
 @keyframes goingUp100 {
