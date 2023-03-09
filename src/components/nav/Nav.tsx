@@ -10,6 +10,8 @@ import hamburger from '../../assets/nav/hamburger.png'
 class Nav extends React.Component {
   handleClick() {
     const navLinks = document.querySelector('.nav-links');
+    const navButton = document.querySelector('.nav-button');
+    navButton?.classList.toggle('active-button');
     navLinks?.classList.toggle('active');
   }
 
