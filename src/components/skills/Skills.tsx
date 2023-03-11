@@ -26,36 +26,38 @@ class Skills extends React.Component {
         <div className='skills-wrapper' id='skills'>
           <span className='skills-title' data-aos="fade-down" data-aos-duration="800" data-aos-delay="400">My Skills</span>
           <div className='skills-cards-wrapper'>
-            <div className='skills-card' data-aos="fade-right" data-aos-duration="800" data-aos-delay="900">
+            <div className='skills-card' data-aos="flip-right" data-aos-duration="600" data-aos-delay="500">
               <span className='card-title'>Languages</span>
               <div className='card-main'>
                 <div className='card-icons-wrapper'>
                   <div className='icon-row'>
-                    <img src={html} alt='html' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="1000"/>
-                    <img src={css} alt='css' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="1100"/>
-                    <img src={js} alt='js' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="1200"/>
+                    <img src={html} alt='html' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="600"/>
+                    <img src={css} alt='css' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="700"/>
+                    <img src={js} alt='js' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="800"/>
                   </div>
                   <div className='icon-row'>
-                    <img src={ts} alt='ts' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="1300"/>
-                    <img src={php} alt='php' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="1400"/>
+                    <img src={ts} alt='ts' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="900"/>
+                    <img src={php} alt='php' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="1000"/>
                   </div>
                 </div>
               </div>
             </div>
-            <div className='skills-card' data-aos="fade-right" data-aos-duration="800" data-aos-delay="700">
+            <div className='skills-card' data-aos="flip-right" data-aos-duration="600" data-aos-delay="500">
               <span className='card-title'>Libraries</span>
               <div className='card-main'>
                 <div className='card-icons-wrapper'>
                   <div className='icon-row'> 
-                    <img src={react} alt='react' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="800"/>
-                    <img src={node} alt='node' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="900"/>
-                    <img src={sass} alt='sass' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="1000"/>
-                    <img src={json} alt='json' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="1100"/>
+                    <img src={react} alt='react' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="600"/>
+                    <img src={node} alt='node' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="700"/>
+                  </div>
+                  <div className='icon-row'> 
+                    <img src={sass} alt='sass' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="800"/>
+                    <img src={json} alt='json' className='card-icon' data-aos="flip-right" data-aos-duration="800" data-aos-delay="900"/>
                   </div>
                 </div>
               </div>
             </div>
-            <div className='skills-card' data-aos="fade-right" data-aos-duration="800" data-aos-delay="500">
+            <div className='skills-card' data-aos="flip-right" data-aos-duration="600" data-aos-delay="500">
               <span className='card-title'>Tools</span>
               <div className='card-main'>
                 <div className='card-icons-wrapper'>
