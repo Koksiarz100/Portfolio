@@ -17,8 +17,7 @@ class About extends React.Component {
     return(
       <div className='about-section'>
         <span className='about-title' data-aos="fade-right" data-aos-duration="800" data-aos-delay="300">About Me</span>
-        <span className='about-p' data-aos="fade-right" data-aos-duration="800" data-aos-delay="500">I am a student of Opole University of Technology, studying computer science there. Currently, I am in my second year of studies. I specialize in building websites, mainly focusing on frontend, but I also have no problem with backend. I love creating something out of nothing. I'm not afraid of challenges, but I know I don't have all the answers. I learn quickly, so I don't fall behind. I'm always looking for new knowledge. I'm a team player, but I have no problem being a lone wolf. I prefer working with people, but remote work is not a problem for me.</span>
-        <span className='about-p' data-aos="fade-right" data-aos-duration="800" data-aos-delay="700">Like everyone else, I enjoy a good coffee and a good Netflix series. I quickly get to know people and can talk about any topic.</span>
+        <span className='about-p' data-aos="fade-right" data-aos-duration="800" data-aos-delay="500">I am a student of Opole University of Technology, studying computer science there. Currently, I am in my second year of studies. I specialize in building websites, mainly focusing on frontend, but I also have no problem with backend. I love creating something out of nothing. I'm not afraid of challenges, but I know I don't have all the answers. I learn quickly, so I don't fall behind. I'm always looking for new knowledge. I'm a team player, but I have no problem being a lone wolf. I prefer working with people, but remote work is not a problem for me. Like everyone else, I enjoy a good coffee and a good Netflix series. I quickly get to know people and can talk about any topic.</span>
       </div>
     );
   }
