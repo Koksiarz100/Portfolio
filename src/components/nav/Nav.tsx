@@ -1,66 +1,35 @@
 import React, { useState } from 'react'
 import './nav.scss'
-import hamburger from '../../assets/nav/hamburger-light.png'
+import hamburger from '../../assets/nav/hamburger.png'
 
 /** 
   * TODO:
   * ! Dodać informacje gdzie znajduje się użytkownik na stronie (Może border u dołu danego <a>).
-  * * Przepisać na JS6.
 */
 
-function Nav() {
-  const [isNavExpanded, setIsNavExpanded] = useState(false)
-  const [isNavRotated, setIsNavRotated] = useState(false)
-  const [isStarted, setStarted] = useState(false)
+class Nav extends React.Component {
+  handleClick() {
+    const navLinks = document.querySelector('.nav-links');
+    const navButton = document.querySelector('.nav-button');
+    navButton?.classList.toggle('active-button');
+    navLinks?.classList.toggle('active');
+  }
 
-  function animations(isStarted: boolean) {
-    if(isStarted === true){
-      return (
-        <>
-          <button className='nav-button' onClick={() => {setIsNavExpanded(!isNavExpanded);setIsNavRotated(!isNavRotated)}}>
-            <img src={hamburger} alt='menu button' className={
-              isNavExpanded ? "nav-button-img rotated" : "nav-button-img"
-            }/>
+  render(): React.ReactNode {
+      return(
+        <div className='nav-wrapper'>
+          <button onClick={this.handleClick} className='nav-button'>
+            <img src={hamburger} alt='hamburger' id='nav-button-img'/>
           </button>
-          <div className={
-            isNavExpanded ? "nav-list expanded" : "nav-list"
-          }>
-            <li className='nav-item'><a href='#home'>Home</a></li>
+          <div className='nav-links started'>
+            <li><a href='#home'>Home</a></li>
             <li><a href='#about'>About</a></li>
             <li><a href='#skills'>Skills</a></li>
             <li><a href='#projects'>Projects</a></li>
           </div>
-        </>
-      )
-    }
-    else if (isStarted === false){
-      return (
-        <>
-          <button className='nav-button' onClick={() => {setIsNavExpanded(!isNavExpanded);setIsNavRotated(!isNavRotated);setStarted(true)}}>
-            <img src={hamburger} alt='menu button' className={
-              isNavExpanded ? "nav-button-img rotated" : "nav-button-img normal"
-            }/>
-          </button>
-          <div className={
-            isNavExpanded ? "nav-list expanded" : "nav-list normal"
-          }>
-          <li><a href='#home'>Home</a></li>
-          <li><a href='#about'>About</a></li>
-          <li><a href='#skills'>Skills</a></li>
-          <li><a href='#projects'>Projects</a></li>
         </div>
-      </>
-      )
-    }
+      );
   }
-
-  return (
-    <div className='nav-wrapper'>
-      <>
-        {animations(isStarted)}
-      </>
-    </div>
-  )
 }
 
 export default Nav
