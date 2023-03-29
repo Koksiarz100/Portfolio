@@ -43,6 +43,16 @@
       margin: 0;
       padding: 0;
       color: base.$font-color;
+
+      .orange {
+        color: base.$tertiary-color;
+      }
+
+      .netflix {
+        background: -webkit-linear-gradient(red, red, #590c00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
   }
 
