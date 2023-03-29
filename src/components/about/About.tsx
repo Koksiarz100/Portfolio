@@ -25,10 +25,10 @@ class About extends React.Component {
   aboutTools() {
     return(
       <div className='about-tools'>
-        <img src={vsc} alt='vsc' data-aos="flip-right" data-aos-duration="800" data-aos-delay="200"/>
-        <img src={git} alt='git' data-aos="flip-right" data-aos-duration="800" data-aos-delay="400"/>
-        <img src={github} alt='github' data-aos="flip-right" data-aos-duration="800" data-aos-delay="600"/>
-        <img src={disc} alt='discord' data-aos="flip-right" data-aos-duration="800" data-aos-delay="800"/>
+        <img src={vsc} alt='vsc' data-aos="flip-right" data-aos-duration="800" data-aos-delay="800"/>
+        <img src={git} alt='git' data-aos="flip-right" data-aos-duration="800" data-aos-delay="900"/>
+        <img src={github} alt='github' data-aos="flip-right" data-aos-duration="800" data-aos-delay="1000"/>
+        <img src={disc} alt='discord' data-aos="flip-right" data-aos-duration="800" data-aos-delay="1100"/>
       </div>
     );
   }
@@ -37,11 +37,11 @@ class About extends React.Component {
     return (
       <div className='about-wrapper' id='about'>
         <div className='about-img-wrapper'>
-          <img src={prof} alt='profile' className='about-img' data-aos="flip-right" data-aos-duration="800" data-aos-delay="200"/>
+          <img src={prof} alt='profile' className='about-img' data-aos="flip-right" data-aos-duration="800" data-aos-delay="100"/>
         </div>
         <this.aboutSection />
         <div className='about-tools-section'>
-          <span className='about-tools-title' data-aos="fade-right" data-aos-duration="800" data-aos-delay="200">Tools I use everyday</span>
+          <span className='about-tools-title' data-aos="fade-right" data-aos-duration="800" data-aos-delay="500">Tools I use everyday</span>
           <this.aboutTools />
         </div>
       </div>

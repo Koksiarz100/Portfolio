@@ -24,7 +24,7 @@ class Skills extends React.Component {
   render() {
       return(
         <div className='skills-wrapper' id='skills'>
-          <span className='skills-title' data-aos="fade-down" data-aos-duration="800" data-aos-delay="400">My Skills</span>
+          <span className='skills-title' data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">My Skills</span>
           <div className='skills-cards-wrapper'>
             <div className='skills-card' data-aos="flip-right" data-aos-duration="600" data-aos-delay="500">
               <span className='card-title'>Languages</span>
