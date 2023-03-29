@@ -76,6 +76,14 @@
             flex-direction: column;
           }
 
+          @media screen and (max-width: 1200px) {
+            flex-direction: column;
+          }
+
+          @media screen and (max-width: 1400px) {
+            flex-direction: column;
+          }
+
           .icon-row {
             display: flex;
             flex-direction: row;
@@ -86,6 +94,10 @@
           .card-icon {
             margin: 0 5px 0 5px;
             width: 60px;
+
+            @media screen and (max-width: 1200px) {
+              width: 60px;
+            }
           }
         }
       }
