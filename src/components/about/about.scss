@@ -38,6 +38,10 @@
       margin: 0;
       padding: 0;
       color: base.$font-color;
+
+      @media screen and (min-width: 1200px) {
+        font-size: 2.5rem;
+      }
     }
   
     .about-p {
@@ -49,7 +53,7 @@
       color: base.$font-color;
 
       @media screen and (min-width: 1200px) {
-        font-size: 0.9rem;
+        font-size: 1rem;
       }
 
       .orange {
@@ -91,6 +95,10 @@
       img {
         width: 60px;
         margin: 0 10px;
+
+        @media screen and (min-width: 1200px) {
+          width: 50px;
+        }
       }
     }
   }
