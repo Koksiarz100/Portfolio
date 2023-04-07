@@ -18,18 +18,22 @@ class Footer extends React.Component {
         <div className='footer-section'>
           Socials
           <div className='footer-socials'>
-            <a href='https://www.facebook.com/jarek.zwierz.56'>
-              <img src={fb} alt='fb' className='socials-img'/>
-            </a>
-            <a href='https://www.instagram.com/jarekzwierz/'>
-              <img src={ig} alt='ig' className='socials-img'/>
-            </a>
-            <a href='https://t.me/Koksiarz'>
-              <img src={tg} alt='tg' className='socials-img'/>
-            </a>
-            <a href='https://www.linkedin.com/in/jarosław-zwierz'>
-              <img src={li} alt='li' className='socials-img'/>
-            </a>
+            <div className='socials-img-row'>
+              <a href='https://www.facebook.com/jarek.zwierz.56'>
+                <img src={fb} alt='fb' className='socials-img'/>
+              </a>
+              <a href='https://www.instagram.com/jarekzwierz/'>
+                <img src={ig} alt='ig' className='socials-img'/>
+              </a>
+            </div>
+            <div className='socials-img-row'>
+              <a href='https://t.me/Koksiarz'>
+                <img src={tg} alt='tg' className='socials-img'/>
+              </a>
+              <a href='https://www.linkedin.com/in/jarosław-zwierz'>
+                <img src={li} alt='li' className='socials-img'/>
+              </a>
+            </div>
           </div>
         </div>
         <div className='footer-section'>
