@@ -8,21 +8,21 @@ class Projects extends React.Component {
     if(project === 1) {
       return(
         <div className='card-img'>
-          card1
+          
         </div>
       );
     }
     else if(project === 2) {
       return(
         <div className='card-img'>
-          card2
+          
         </div>
       );
     }
     else if(project === 3) {
       return(
         <div className='card-img'>
-          card3
+          
         </div>
       );
     }
