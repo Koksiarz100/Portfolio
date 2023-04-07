@@ -4,24 +4,83 @@ import github from '../../assets/icons/github.png'
 
 class Projects extends React.Component {
 
-  Card = () => {
-    return(
-      <div className='card'>
-        <div className='card-main'>
-          <div className='card-img'>
-
-          </div>
-          <div className='card-title'>
-            
-          </div>
-          <div className='card-description'>
-
-          </div>
+  CardImg = (project : number ) => {
+    if(project === 1) {
+      return(
+        <div className='card-img'>
+          card1
         </div>
+      );
+    }
+    else if(project === 2) {
+      return(
+        <div className='card-img'>
+          card2
+        </div>
+      );
+    }
+    else if(project === 3) {
+      return(
+        <div className='card-img'>
+          card3
+        </div>
+      );
+    }
+  }
+
+  CardTitle = (project : number) => {
+    if(project === 1) {
+      return(
+        <span className='card-title'>Project 1</span>
+      );
+    }
+    else if(project === 2) {
+      return(
+        <span className='card-title'>Project 2</span>
+      );
+    }
+    else if(project === 3) {
+      return(
+        <span className='card-title'>Project 3</span>
+      );
+    }
+  }
+
+  CardFooter = (project : number) => {
+    if(project === 1) {
+      return(
         <div className='card-footer'>
           <a href='#'>Github</a>
           <img src={github} alt='github' id='card-git'/>
         </div>
+      );
+    }
+    else if(project === 2) {
+      return(
+        <div className='card-footer'>
+          <a href='#'>Github</a>
+          <img src={github} alt='github' id='card-git'/>
+        </div>
+      );
+    }
+    else if(project === 3) {
+      return(
+        <div className='card-footer'>
+          <a href='#'>Github</a>
+          <img src={github} alt='github' id='card-git'/>
+        </div>
+      );
+    }
+  }
+
+  Card = (card : number) => {
+    return(
+      <div className='card' data-aos="flip-right" data-aos-duration="800" data-aos-delay="600">
+        <div className='card-main'>
+          {this.CardImg(card)}
+          {this.CardTitle(card)}
+        </div>
+        {this.CardFooter(card)}
       </div>
     );
   }
@@ -29,11 +88,11 @@ class Projects extends React.Component {
   render(): React.ReactNode {
     return(
       <div className='projects-wrapper' id='projects'>
-        <h1>Projects</h1>
+        <span className='projects-title' data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">Projects</span>
         <div className='cards-wrapper'>
-          <this.Card />
-          <this.Card />
-          <this.Card />
+          {this.Card(1)}
+          {this.Card(2)}
+          {this.Card(3)}
         </div>
       </div>
     );
